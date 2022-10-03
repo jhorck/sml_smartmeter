@@ -1,0 +1,13 @@
+[Unit]
+Description=Smartmeter SML to MQTT
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/local/bin/sml_smartmeter -m /dev/ttyUSB0
+ExecReload=
+StandardOutput=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
